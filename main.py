@@ -263,10 +263,5 @@ def main():
     send_message(accessToken, region, weather, temp, wind_dir, note_ch, note_en)
 
 if __name__ == '__main__':
-
-    schedule.every().day.at('10:40').do(main)
-    while True:
-        schedule.run_pending()
-        time.sleep(30)
-
+  main()
 
