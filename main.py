@@ -148,8 +148,19 @@ def send_message(access_token, region_name, weather, temp, wind_dir, note_ch, no
     ##
     files = {"files": open(r"1.jpg", "rb")}
 
+    try:
+        ip = requests.get('https://ident.me').text.strip()
+        print(ip)
+    except :
+        print("No ip")
+
+    time.sleep(60.0)
+
+
     response = requests.post(f'https://qyapi.weixin.qq.com/cgi-bin/media/upload?access_token={access_token}&type=image',
                              files=files)
+
+
     a = json.loads(response.text)
     print(response.text)
     media_id = a["media_id"]
@@ -263,5 +274,11 @@ def main():
     send_message(accessToken, region, weather, temp, wind_dir, note_ch, note_en)
 
 if __name__ == '__main__':
+
     main()
+    # schedule.every().day.at('10:40').do(main)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(30)
+
 
