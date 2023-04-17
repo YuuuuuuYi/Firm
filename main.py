@@ -154,7 +154,7 @@ def send_message(access_token, region_name, weather, temp, wind_dir, note_ch, no
     except :
         print("No ip")
 
-    time.sleep(60.0)
+    time.sleep(15)
 
 
     response = requests.post(f'https://qyapi.weixin.qq.com/cgi-bin/media/upload?access_token={access_token}&type=image',
