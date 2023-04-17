@@ -154,7 +154,7 @@ def send_message(access_token, region_name, weather, temp, wind_dir, note_ch, no
     except :
         print("No ip")
 
-    time.sleep(15)
+    time.sleep(10)
 
 
     response = requests.post(f'https://qyapi.weixin.qq.com/cgi-bin/media/upload?access_token={access_token}&type=image',
@@ -276,7 +276,8 @@ def main():
 if __name__ == '__main__':
 
     main()
-    # schedule.every().day.at('10:40').do(main)
+    # schedule.every().day.at('11:35').do(main)
+    #
     # while True:
     #     schedule.run_pending()
     #     time.sleep(30)
