@@ -263,5 +263,5 @@ def main():
     send_message(accessToken, region, weather, temp, wind_dir, note_ch, note_en)
 
 if __name__ == '__main__':
-  main()
+    main()
 
